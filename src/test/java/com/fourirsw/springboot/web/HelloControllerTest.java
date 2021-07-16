@@ -16,16 +16,23 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(controllers = HelloController.class)
 public class HelloControllerTest {
 
-//    @Autowired
-//    private MockMvc mvc;
+    @Autowired
+    private MockMvc mvc;
+
+    /* Application.java에서
+       @EnableJpaAuditing 어노테이션이 달리면
+       자동으로 시간을 매핑한 테이블이 들어오게 되므로 테스트 내용이 맞지않게 된다.
+       hello_return()과 helloDto_return은 auditing 되기전 내용을 테스트하기
+       위한 것인 만큼 테스트 내용을 수정하거나 주석처리하면 된다.
+    */
 
 //    @Test
 //    public void hello_return() throws Exception{
 //        String hello = "hello";
 //
-//        mvc.perform(get("/hello"))
-//                .andExpect(status().isOk())
-//                .andExpect(content().string(hello));
+//        mvc.perform(get("/hello/"))
+//                .andExpect(status().isOk());
+//                //.andExpect(content().string(hello));
 //    }
 //
 //    @Test

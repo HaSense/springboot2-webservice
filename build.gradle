@@ -1,10 +1,9 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.9.RELEASE'
+        springBootVersion = '2.1.7.RELEASE'
     }
     repositories {
         mavenCentral()
-        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -16,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'com.fourirsw.boot'
+group 'com.jojoldu.book'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -24,12 +23,15 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-test'
     compile('org.springframework.boot:spring-boot-starter-web')
     //롬복을 설치하려면 지금처럼 gradle에 등록하자
     compile('org.projectlombok:lombok')
     //jpa를 사용하려면 다음과 같이 지정하면 된다.
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('com.h2database:h2')
+    //머스테치 사용시 추가
+    compile('org.springframework.boot:spring-boot-starter-mustache')
 
     //롬복 설치후 제대로 동작하는 경우가 많다. 아래의 testCompile을 적용해 주어야하고
     //annotation문제도 직접적으로 명시해 해결해 줘야 한다.

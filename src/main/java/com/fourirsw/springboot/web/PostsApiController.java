@@ -1,11 +1,14 @@
 package com.fourirsw.springboot.web;
 
+import com.fourirsw.springboot.dto.PostsListResponseDto;
 import com.fourirsw.springboot.dto.PostsResponseDto;
 import com.fourirsw.springboot.dto.PostsSaveRequestDto;
 import com.fourirsw.springboot.dto.PostsUpdateRequestDto;
 import com.fourirsw.springboot.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -34,8 +37,9 @@ public class PostsApiController {
         return postsService.findById(id);
     }
 
-//    @GetMapping("/api/v1/posts/list")
-//    public List<PostsListResponseDto> findAll() {
-//        return postsService.findAllDesc();
-//    }
+    @GetMapping("/api/v1/posts/list")
+    public List<PostsListResponseDto> findAll() {
+        return postsService.findAllDesc();
+    }
+
 }

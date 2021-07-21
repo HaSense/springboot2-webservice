@@ -2,6 +2,7 @@ package com.fourirsw.springboot.service;
 
 import com.fourirsw.springboot.domain.posts.Posts;
 import com.fourirsw.springboot.domain.posts.PostsRepository;
+import com.fourirsw.springboot.dto.PostsListResponseDto;
 import com.fourirsw.springboot.dto.PostsResponseDto;
 import com.fourirsw.springboot.dto.PostsSaveRequestDto;
 import com.fourirsw.springboot.dto.PostsUpdateRequestDto;
@@ -9,6 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RequiredArgsConstructor
@@ -57,4 +61,11 @@ public class PostsService {
         return new PostsResponseDto(entity);
     }
 
+    //게시글 리스트 보기를 위한
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }

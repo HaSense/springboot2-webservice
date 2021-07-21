@@ -24,22 +24,22 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-test'
-    compile('org.springframework.boot:spring-boot-starter-web')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     //롬복을 설치하려면 지금처럼 gradle에 등록하자
-    compile('org.projectlombok:lombok')
+    implementation 'org.projectlombok:lombok'
     //jpa를 사용하려면 다음과 같이 지정하면 된다.
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('com.h2database:h2')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'com.h2database:h2'
     //머스테치 사용시 추가
-    compile('org.springframework.boot:spring-boot-starter-mustache')
+    implementation 'org.springframework.boot:spring-boot-starter-mustache'
 
     //롬복 설치후 제대로 동작하는 경우가 많다. 아래의 testCompile을 적용해 주어야하고
     //annotation문제도 직접적으로 명시해 해결해 줘야 한다.
-    testCompile('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
     annotationProcessor('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
 
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }

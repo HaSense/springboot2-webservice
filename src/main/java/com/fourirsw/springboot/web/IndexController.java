@@ -14,8 +14,15 @@ public class IndexController {
 
     private final PostsService postsService;
 
+//    @GetMapping("/")
+//    public String index() {
+//        return "index";
+//    }
+
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+
+        model.addAttribute("posts", postsService.findAllDesc());
 
         return "index";
     }

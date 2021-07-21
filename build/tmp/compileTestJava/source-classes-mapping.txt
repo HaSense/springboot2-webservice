@@ -1,0 +1,10 @@
+com/fourirsw/springboot/web/PostsApiControllerTest.java
+ com.fourirsw.springboot.web.PostsApiControllerTest
+com/fourirsw/springboot/domain/posts/PostsRepositoryTest.java
+ com.fourirsw.springboot.domain.posts.PostsRepositoryTest
+com/fourirsw/springboot/web/IndexControllerTest.java
+ com.fourirsw.springboot.web.IndexControllerTest
+com/fourirsw/springboot/web/HelloControllerTest.java
+ com.fourirsw.springboot.web.HelloControllerTest
+com/fourirsw/springboot/web/dto/HelloResponseDtoTest.java
+ com.fourirsw.springboot.web.dto.HelloResponseDtoTest
